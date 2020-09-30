@@ -1,2 +1,8 @@
 applications:
 - name: cf-env-spring
+  memory: 1024MB
+  path: target/cf-env-spring-0.0.1-snapshot.jar
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git#v4.32.1
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 14.0.1_+ } }'
